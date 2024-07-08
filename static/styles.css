@@ -1,0 +1,44 @@
+.grid-container_ {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 70px;
+}
+.grid-container_ figcaption{
+    color: #475467;
+}
+
+.grid-item_ {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: rgba(102, 112, 133, 0.5);
+   
+}
+
+.grid-item_ img {
+    max-width: 100%;
+}
+
+.grid-item_:hover img{
+    opacity: 0.8;
+    -webkit-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    transform: scale(1.02);
+    color: #333;
+    text-decoration: none;
+}
+
+  
+  .grid-item_:hover {
+    border-color: #667085;
+    
+  }
+  
+  .grid-item_:focus {
+    border-color: #667085;
+  }
+
+

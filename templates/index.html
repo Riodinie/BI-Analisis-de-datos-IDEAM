@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html  data-wf-page="6354fbc82cf25038ff686b9c" data-wf-site="6354f829d619347cb5128c1c">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Pronóstico Pluviométrico Nacional</title>
+        <link href="/static/style.css" rel="stylesheet" type="text/css"/>
+        <style>
+            @media (min-width: 992px) {
+                html.w-mod-js:not(.w-mod-ix) [data-w-id="ef85b851-e571-5cbb-4c61-762f8b6b40f0"] {
+                    opacity:0;
+                    display: block;
+                }
+
+                html.w-mod-js:not(.w-mod-ix) [data-w-id="5e279807-d2c3-0018-0cc2-4490fb817513"] {
+                    opacity: 0;
+                    display: flex;
+                }
+            }
+        </style>
+
+        <script src="/static/webfont.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            WebFont.load({
+                google: {
+                    families: ["Inter:100,200,300,regular,500,600,700,800,900", "Syne:regular,500,600,700,800", "Sacramento:regular"]
+                }
+            });
+        </script>
+        
+        <link href="/static/img/_favicon.svg" rel="shortcut icon" type="image/x-icon"/>
+        <link href="/static/img/_webclip.svg" rel="apple-touch-icon"/>
+    </head>
+    <body>
+        <nav class="nav-bar position-absolute">
+            <div class="container w-container">
+                <div class="nav-bar-container">
+                    <a href="/" aria-current="page" class="nav-logo-container w-nav-brand w--current">
+                    </a>
+                    <div class="nav-menu-links">
+                        <a data-w-id="c36d71ce-fec6-9225-2f1d-5137ea5928b5" href="/" aria-current="page" class="nav-menu-link w-inline-block w--current">
+                            <div class="animation-rotate-text-container">
+                                <div class="animation-rotate-text-one">
+                                    <div class="nav-menu-text">Inicio</div>
+                                </div>
+                                <div class="animation-rotate-text-two">
+                                    <div class="nav-menu-text">
+                                        Inicio<br/>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a data-w-id="c36d71ce-fec6-9225-2f1d-5137ea5928bc" href="{{ url_for('prediccion') }}" class="nav-menu-link w-inline-block">
+                            <div class="animation-rotate-text-container">
+                                <div class="animation-rotate-text-one">
+                                    <div class="nav-menu-text">Predecir</div>
+                                </div>
+                                <div class="animation-rotate-text-two">
+                                    <div class="nav-menu-text">Predecir</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a data-w-id="c36d71ce-fec6-9225-2f1d-5137ea5928c2" href="{{ url_for('graficas') }}" class="nav-menu-link last w-inline-block">
+                            <div class="animation-rotate-text-container">
+                                <div class="animation-rotate-text-one">
+                                    <div class="nav-menu-text">Gráficas</div>
+                                </div>
+                                <div class="animation-rotate-text-two">
+                                    <div class="nav-menu-text">Gráficas</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a data-w-id="c36d71ce-fec6-9225-2f1d-5137ea5928c8" href="{{ url_for('informacion') }}" class="nav-menu-link w-inline-block">
+                            <div class="animation-rotate-text-container">
+                                <div class="animation-rotate-text-one">
+                                    <div class="nav-menu-text">Información</div>
+                                </div>
+                                <div class="animation-rotate-text-two">
+                                    <div class="nav-menu-text">Información</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div data-w-id="c36d71ce-fec6-9225-2f1d-5137ea5928ce" class="nav-menu-mobile">
+                       <img src="/static/img/_mobile-menu.svg" loading="lazy" alt=""/>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="mobile-menu">
+            <div class="mobile-menu-background-two"></div>
+            <div class="mobile-menu-container">
+                <div data-w-id="1b51882d-64fe-7679-556e-9a64ba7da636" class="mobile-menu-close-button">
+                    <img src="/static/img/_close-icon.svg" loading="lazy" alt=""/>
+                </div>
+                <div class="mobile-menu-links-container">
+                    <div class="overflow-hidden">
+                        <a href="/" aria-current="page" class="mobile-menu-link w--current">Inicio</a>
+                    </div>
+                    <div class="overflow-hidden">
+                        <a href="{{ url_for('prediccion') }}" class="mobile-menu-link">Predecir</a>
+                    </div>
+                    <div class="overflow-hidden">
+                        <a href="{{ url_for('graficas') }}" class="mobile-menu-link">Graficas</a>
+                    </div>
+                    <div class="overflow-hidden">
+                        <a href="{{ url_for('informacion') }}" class="mobile-menu-link">Información</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section no-top-padding">
+            <div data-w-id="45a60a63-e509-590d-4d77-d4bd8f5317ff" class="hero-image-container">
+                <img src="/static/img/_hero.jpg" loading="lazy" width="1500" data-w-id="45a60a63-e509-590d-4d77-d4bd8f531800" srcset="/static/img/_hero-p-500.jpg 500w, /static/img/_hero-p-800.jpg 800w, /static/img/_hero-p-1080.jpg 1080w, /static/img/_hero-p-1600.jpg 1600w, /static/img/_hero.jpg 3000w" sizes="100vw" alt="hero" class="hero-image"/>
+                <div style="display:block" class="hero-image-cover-white"></div>
+            </div>
+            <div class="container w-container">
+                <div class="hero-text-grid">
+                    <div data-w-id="45a60a63-e509-590d-4d77-d4bd8f531804" class="hero-main-text-container">
+                        <div class="overflow-hidden">
+                            <div style="-webkit-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="text-1th">
+                                <h1 class="hero-title">Predicción</h1>
+                            </div>
+                        </div>
+                        <div class="overflow-hidden">
+                            <div style="-webkit-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="text-2th">
+                                <h1 class="hero-title">Pluviométrico</h1>
+                            </div>
+                        </div>
+                        <div class="overflow-hidden">
+                            <div style="-webkit-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="text-3th">
+                                <h1 class="hero-title">Nacional</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-text-container">
+                        <p data-w-id="45a60a63-e509-590d-4d77-d4bd8f531812" style="-webkit-transform:translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="text-md">(PPN) es una plataforma gubernamental diseñada para brindar información sobre las condiciones de precipitación en todo el país. Este servicio tiene como objetivo ayudar a la población, los agricultores, las autoridades locales y otros sectores a tomar decisiones informadas basadas en las predicciones meteorológicas más recientes.</p>
+                        <a data-w-id="45a60a63-e509-590d-4d77-d4bd8f531814" href="" class="animated-arrow-button w-inline-block">
+                            <div class="animated-arrow-button-container">
+                                <div style="-webkit-transform:translate3d(0, 110%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 110%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 110%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 110%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="text-md semibold gray-900">Leer más</div>
+                                <div style="-webkit-transform:translate3d(0, 110%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 110%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 110%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 110%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="button-arrow">
+                                    <img src="/static/img/_arrow-head.svg" loading="lazy" alt="" class="button-arrow-head"/>
+                                    <div class="button-arrow-body"></div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section no-top-padding">
+            <div class="container w-container">
+                <div data-w-id="dddfc70c-9a1d-01f5-31be-de614d7db746" class="photo-collage">
+                    <div class="photo-collage-images-container">
+                        <div class="photo-collage-row-one">
+                            <div data-w-id="c1ab7613-feaf-d7f2-dfef-c55df39fa96a" style="-webkit-transform:translate3d(0, 100px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 100px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 100px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 100px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="collage-image-cotainer is-1th">
+                                <img src="/static/img/natural-umbrella.jpg" loading="lazy" width="280" height="231"  alt="collage photo" class="collage-image"/>
+                                <div style="display:block" class="animation-swipe-reveal-overlay"></div>
+                            </div>
+                            <div data-w-id="ef2ce72a-06e5-b21e-0807-5ce8c8dfcd45" style="-webkit-transform:translate3d(0, 100px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 100px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 100px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 100px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="collage-image-cotainer is-2th">
+                                <img src="/static/img/hail-storm.jpg" loading="lazy" width="247" height="370"  alt="collage photo" class="collage-image"/>
+                                <div style="display:block" class="animation-swipe-reveal-overlay"></div>
+                            </div>
+                        </div>
+                        <div class="photo-collage-row-two">
+                            <div data-w-id="4cfe2ca6-6fdd-c9c7-3fdb-9910a6e1214c" style="-webkit-transform:translate3d(0, 100px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 100px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 100px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 100px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="collage-image-cotainer is-3th">
+                                <img src="/static/img/snow-in-jubilee-gardens.jpg" sizes="(max-width: 991px) 39vw, 38vw" alt="collage photo" class="collage-image"/>
+                                <div style="display:block" class="animation-swipe-reveal-overlay"></div>
+                            </div>
+                            <div data-w-id="e3aeea9a-3097-8092-2d7c-6f6ed9a568eb" style="-webkit-transform:translate3d(0, 100px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 100px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 100px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 100px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="collage-image-cotainer is-4th">
+                                <img src="/static/img/snowy-sidewalk.jpg" loading="lazy" width="230" height="340"  sizes="24vw" alt="collage photo" class="collage-image"/>
+                                <div style="display:block" class="animation-swipe-reveal-overlay"></div>
+                            </div>
+                            <div data-w-id="41bd7a77-51b7-663a-539b-72e4adb48e2d" style="-webkit-transform:translate3d(0, 100px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 100px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 100px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 100px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="collage-image-cotainer is-5th">
+                                <img src="/static/img/flamingos-in-the-rain.jpg" loading="lazy" width="350" height="200"  sizes="34vw" alt="collage photo" class="collage-image"/>
+                                <div style="display:block" class="animation-swipe-reveal-overlay"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo-collage-text-container">
+                        <div class="photo-collage-text-animation">
+                            <div data-w-id="d2fa55d2-cfb1-5793-517a-98593d6bc8bf" class="heading-animation-trigger">
+                                <div style="-webkit-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="animation-content">
+                                    <div class="photo-collage-text">Precipitación</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section no-top-padding">
+            <div class="container w-container">
+                <div class="w-layout-grid about-me-grid">
+                    <div id="w-node-_3e705d77-dc26-b757-211e-55768c1dc781-ff686b9c" class="about-grid-column">
+                        <div data-w-id="c49f2f2c-9967-55f0-a89a-e7347fd645a6" class="heading-animation-trigger">
+                            <div style="-webkit-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="animation-content">
+                                <div class="overline">Tomado de National Geographic</div>
+                            </div>
+                        </div>
+                        <div data-w-id="5e155e72-4062-c05d-c30f-084154ac929a" class="heading-animation-trigger">
+                            <div style="-webkit-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="animation-content">
+                                <h2 class="display-2">¿Qué es?</h2>
+                            </div>
+                        </div>
+                        <div data-w-id="e03ef082-4dcb-92f1-4cd0-e9ee2861e20c" style="-webkit-transform:translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="text-md">La precipitación es cualquier agua líquida o congelada que se forma en la atmósfera y vuelve a caer a la tierra. Se presenta en muchas formas, como lluvia, aguanieve y nieve. Junto con la evaporación y la condensación, la precipitación es una de las tres partes principales del ciclo global del agua.<p></p> La precipitación se forma en las nubes cuando el vapor de agua se condensa en gotas de agua cada vez más grandes. Cuando las gotas son lo suficientemente pesadas, caen a la tierra. Si una nube es más fría, como lo sería en altitudes más altas, las gotas de agua pueden congelarse para formar hielo. Estos cristales de hielo caen a la tierra en forma de nieve, granizo o lluvia, dependiendo de la temperatura dentro de la nube y en la superficie de la Tierra. La mayor parte de la lluvia en realidad comienza como nieve en lo alto de las nubes. A medida que los copos de nieve caen a través del aire más cálido, se convierten en gotas de lluvia. <p></p> 
+                            Las partículas de polvo o humo en la atmósfera son esenciales para la precipitación. Estas partículas, llamadas "núcleos de condensación", proporcionan una superficie para que el vapor de agua se condense. Esto ayuda a que las gotas de agua se junten y se vuelvan lo suficientemente grandes como para caer a la tierra. <p></p>La precipitación es siempre agua dulce, incluso cuando el agua se originó en el océano. Esto se debe a que la sal marina no se evapora con el agua. Sin embargo, en algunos casos, los contaminantes en la atmósfera pueden contaminar las gotas de agua antes de que caigan al suelo.
+                        </div>              
+                    </div>
+                    <div id="w-node-_2aeba2ad-0aa7-8f1e-7745-64281e427862-ff686b9c" data-w-id="2aeba2ad-0aa7-8f1e-7745-64281e427862" class="corners-image">
+                        <div class="image-with-corners-container">
+                            <img src="/static/img/hail.jpg" sizes="(max-width: 479px) 93vw, (max-width: 767px) 85vw, 89vw" alt="carlos ortega" class="image-with-corners"/>
+                            <div style="display:block" class="image-with-corners-overlay-white"></div>
+                            <div style="display:block" class="image-with-corners-overlay-gray"></div>
+                        </div>
+                        <img src="/static/img/_image-corner.svg" loading="lazy" width="45" style="-webkit-transform:translate3d(10px, 10px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(10px, 10px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(10px, 10px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(10px, 10px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" alt="" class="image-corner-top"/>
+                        <img src= "/static/img/_corner-bottom.svg" loading="lazy" width="45" style="-webkit-transform:translate3d(-10px, -10px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(-10px, -10px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(-10px, -10px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(-10px, -10px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" alt="" class="image-corner-bottom"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section no-top-padding">
+            <div class="container w-container">
+                <div class="w-layout-grid about-me-grid">
+                    <div id="w-node-_66c10fa2-10a5-94a2-ae16-7bdfc5782c80-76128c28" class="centrar">
+                        <div data-w-id="e03ef082-4dcb-92f1-4cd0-e9ee2861e20c" style="-webkit-transform:translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="text-md"><h1 class="heading-h2 semibold margin-bottom-10px">Lluvia
+                        </h1>La lluvia es una precipitación que cae a la superficie de la Tierra en forma de gotas de agua. Las gotas de lluvia se forman alrededor de núcleos microscópicos de condensación de nubes, como una partícula de polvo o una molécula de contaminación.<p></p> 
+                        La lluvia que cae de las nubes pero se congela antes de llegar al suelo se llama aguanieve o gránulos de hielo.
+                        <p></p>A pesar de que las imágenes de dibujos animados de gotas de lluvia parecen lágrimas, las gotas de lluvia reales son en realidad esféricas.
+                        </div>      
+                                
+                    </div> 
+                    
+                    <div data-w-id="e03ef082-4dcb-92f1-4cd0-e9ee2861e20c" style="-webkit-transform:translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="text-md"><h1 class="heading-h2 semibold margin-bottom-10px">Granizo
+                    </h1>El granizo se forma en las nubes frías de tormenta. Se forma cuando las gotas de agua muy fría se congelan, o se vuelven sólidas, tan pronto como tocan cosas como el polvo o la suciedad. La tormenta sopla el granizo en la parte superior de la nube. Se agregan más gotas de agua congelada al granizo antes de que caiga.<p></p> 
+                    A diferencia del aguanieve, que es líquido cuando se forma y se congela cuando cae a la Tierra, el granizo cae como una piedra de hielo sólido.
+                    <p></p>Las piedras de granizo suelen ser del tamaño de rocas pequeñas, pero pueden llegar a medir hasta 15 centímetros  de ancho y pesar más de una libra.
+                    </div>      
+                </div>
+                
+            </div>
+        </div>
+        <div class="section no-top-padding">
+            <div class="container w-container">
+                <div class="w-layout-grid about-me-grid">
+                    <div id="w-node-_66c10fa2-10a5-94a2-ae16-7bdfc5782c80-76128c28" class="about-grid-column">
+                        <div data-w-id="e03ef082-4dcb-92f1-4cd0-e9ee2861e20c" style="-webkit-transform:translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="text-md"><h1 class="heading-h2 semibold margin-bottom-10px">Nieve
+                        </h1>La nieve es una precipitación que cae en forma de cristales de hielo. El granizo también es hielo, pero el granizo es solo colecciones de gotas de agua congeladas. La nieve tiene una estructura compleja. Los cristales de hielo se forman individualmente en las nubes, pero cuando caen, se pegan en grupos de copos de nieve.
+                        <p></p>Las nevadas ocurren cuando muchos copos de nieve individuales caen de las nubes. A diferencia de una tormenta de granizo, las nevadas suelen ser tranquilas. El granizo es duro, mientras que los copos de nieve son blandos.
+                        <p></p> Los copos de nieve desarrollan diferentes patrones, dependiendo de la temperatura y la humedad del aire. Cuando la nieve cae en forma de bola en lugar de copos blandos, se llama graupel. Esto sucede cuando la nieve se derrite y se forma precipitación alrededor del cristal de nieve.
+                        </div>      
+                                
+                    </div> 
+                    
+                    <div data-w-id="e03ef082-4dcb-92f1-4cd0-e9ee2861e20c" style="-webkit-transform:translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="text-md"><h1 class="heading-h2 semibold margin-bottom-10px">Otros tipos de precipitación
+                    </h1>A veces, diferentes tipos de precipitación caen al mismo tiempo. Durante las fuertes tormentas invernales, por ejemplo, no es inusual que caiga aguanieve y lluvia al mismo tiempo.<p></p> 
+                    Otras veces, las precipitaciones no caen en absoluto. La <b>virga</b> es un tipo de precipitación que comienza a caer de una nube, pero se evapora antes de llegar a la superficie de la Tierra.
+                    <p></p>El calentamiento global también provoca cambios en las precipitaciones globales. Cuando el planeta está más caliente, más hielo se evapora en la atmósfera. Eso eventualmente conduce a más precipitaciones lluviosas. Por lo general, significa un clima más húmedo en partes de América del Norte, por ejemplo, y condiciones más secas en áreas tropicales que generalmente son húmedas.
+                    </div>      
+                </div>
+                
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="container w-container">
+                <div class="w-layout-grid footer-main-grid">
+                    <div id="w-node-_9dff417f-86be-9d18-e0a0-4a98d29d9ead-97995707" class="footer-logo-container">
+                    </div>
+                    <div id="w-node-_9dff417f-86be-9d18-e0a0-4a98d29d9ead-97995707" class="footer-logo-container">
+                    </div>
+                    <div id="w-node-_4e365414-d5d6-3d0b-b928-19c39799575f-97995707" class="footer-social-media-icons-list">
+                        <a href="#" class="social-media-icon-link w-inline-block">
+                            <img src="/static/img/_twitter.svg" loading="lazy" width="16" alt="twitter" class="twitter-icon"/>
+                        </a>
+                        <a href="#" class="social-media-icon-link w-inline-block">
+                            <img src="/static/img/_facebook.svg" loading="lazy" width="7" alt="facebook" class="facebook-icon"/>
+                        </a>
+                        <a href="#" class="social-media-icon-link w-inline-block">
+                            <img src="/static/img/_instagram.svg" loading="lazy" width="15" alt="instagram" class="instagram-icon"/>
+                        </a>
+                        <a href="#" class="social-media-icon-link w-inline-block">
+                            <img src="/static/img/_linkedin.svg" loading="lazy" width="15" alt="linkedin" class="linkedin-icon"/>
+                        </a>
+                    </div>
+                    <div id="w-node-a6ba56b1-38d1-ba41-c5f1-fa09e479356a-97995707" class="footer-line"></div>
+                    <div id="w-node-_1d0f04fc-8fed-1930-8a6d-07775b23f1a3-97995707" class="footer-menu-two">
+                        <div class="footer-nav-menu-links">
+                            <a data-w-id="5f26234f-46b0-ee04-8f1f-aa66b61f1a76" href="" class="nav-menu-link w-inline-block">
+                                <div class="animation-rotate-text-container">
+                                    <div class="animation-rotate-text-one">
+                                        <div class="nav-menu-text">Políticas</div>
+                                    </div>
+                                    <div class="animation-rotate-text-two">
+                                        <div class="nav-menu-text">Políticas</div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a data-w-id="5f26234f-46b0-ee04-8f1f-aa66b61f1a7d" href="" class="nav-menu-link w-inline-block">
+                                <div class="animation-rotate-text-container">
+                                    <div class="animation-rotate-text-one">
+                                        <div class="nav-menu-text">Guia</div>
+                                    </div>
+                                    <div class="animation-rotate-text-two">
+                                        <div class="nav-menu-text">Guia</div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a data-w-id="5f26234f-46b0-ee04-8f1f-aa66b61f1a83" href="" class="nav-menu-link last w-inline-block">
+                                <div class="animation-rotate-text-container">
+                                    <div class="animation-rotate-text-one">
+                                        <div class="nav-menu-text">Preguntas</div>
+                                    </div>
+                                    <div class="animation-rotate-text-two">
+                                        <div class="nav-menu-text">Preguntas</div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a data-w-id="5f26234f-46b0-ee04-8f1f-aa66b61f1a89" href="" class="nav-menu-link w-inline-block">
+                                <div class="animation-rotate-text-container">
+                                    <div class="animation-rotate-text-one">
+                                        <div class="nav-menu-text">Registros</div>
+                                    </div>
+                                    <div class="animation-rotate-text-two">
+                                        <div class="nav-menu-text">Registros</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-layout-grid footer-bottom-grid">
+                    <p class="text-md">
+                        Proyecto por <a href="" class="link">Juan C. Calderon & Monica Plata R.</a>
+                    </p>
+                    <p class="text-md text-align-right text-aling-left-on-mobile">
+                         <a href="" class="link">Negocios Inteligentes</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+        <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6354f829d619347cb5128c1c" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <script src="https://uploads-ssl.webflow.com/6354f829d619347cb5128c1c/js/webflow.2e0ec921c.js" type="text/javascript"></script>
+    </body>
+</html>
