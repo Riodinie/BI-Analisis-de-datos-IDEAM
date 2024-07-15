@@ -180,7 +180,7 @@ def prediccion_precipitacion():
     print(predecir)
     cantpredicion = int(request.form.get("mes"))
     print(cantpredicion)
-    cantregresion_lluvia = predecir(cantpredicion)
+    cantregresion_lluvia = int(predecir(cantpredicion))
     cantregresion_lluvia = int(cantregresion_lluvia)
     cantregresion_anio_lluvia = int(cantregresion_lluvia) * 12
     # formato de presentación 2f quiere decir 2 decimales despues

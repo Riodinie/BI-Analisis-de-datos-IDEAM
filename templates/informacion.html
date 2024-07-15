@@ -1,404 +1,347 @@
 <!DOCTYPE html>
-<html  data-wf-page="6354f829d619342176128c28" data-wf-site="6354f829d619347cb5128c1c">
-    <head>
-        <meta charset="utf-8"/>
-        <title>Información</title>
-        <meta content="Excepturi quos quaerat aperiam adipisci esse sed sed aliquam debitis. Eum et suscipit. Non non ad ex facere. Nulla beatae sapiente dolores nihil distinctio qui. Eos quasi assumenda hic perferendis ut soluta possimus voluptas." name="description"/>
-        <meta content="width=device-width, initial-scale=1" name="viewport"/>
-        <meta content="Webflow" name="generator"/>
-        <link href="/static/style.css" rel="stylesheet" type="text/css"/>
-        <script src="/static/webfont.js" type="text/javascript"></script>
-        <script type="text/javascript">
-            WebFont.load({
-                google: {
-                    families: ["Inter:100,200,300,regular,500,600,700,800,900", "Syne:regular,500,600,700,800", "Sacramento:regular"]
-                }
-            });
-        </script>
-        <script type="text/javascript">
-            !function(o, c) {
-                var n = c.documentElement
-                  , t = " w-mod-";
-                n.className += t + "js",
-                ("ontouchstart"in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
-            }(window, document);
-        </script>
-        <link href="static/img/_favicon.svg" rel="shortcut icon" type="image/x-icon"/>
-        <link href="static/img/_webclip.svg" rel="apple-touch-icon"/>
-    </head>
-    <body>
-        <nav class="nav-bar">
-            <div class="container w-container">
-                <div class="nav-bar-container">
-                    <a href="/" class="nav-logo-container w-nav-brand">
-                    </a>
-                    <div class="nav-menu-links">
-                        <a data-w-id="83e8ae10-eea4-87ee-1c05-dc1b8dfcf54b" href="/" class="nav-menu-link w-inline-block">
-                            <div class="animation-rotate-text-container">
-                                <div class="animation-rotate-text-one">
-                                    <div class="nav-menu-text">Inicio</div>
-                                </div>
-                                <div class="animation-rotate-text-two">
-                                    <div class="nav-menu-text">
-                                        Inicio<br/>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a data-w-id="83e8ae10-eea4-87ee-1c05-dc1b8dfcf552" href="{{ url_for('prediccion') }}" class="nav-menu-link w-inline-block w--current">
-                            <div class="animation-rotate-text-container">
-                                <div class="animation-rotate-text-one">
-                                    <div class="nav-menu-text">Predecir</div>
-                                </div>
-                                <div class="animation-rotate-text-two">
-                                    <div class="nav-menu-text absolute">Predecir</div>
-                                </div>
-                            </div>
-                        </a>
-                        <a data-w-id="83e8ae10-eea4-87ee-1c05-dc1b8dfcf558" href="{{ url_for('graficas') }}" class="nav-menu-link last w-inline-block">
-                            <div class="animation-rotate-text-container">
-                                <div class="animation-rotate-text-one">
-                                    <div class="nav-menu-text">Gráficas</div>
-                                </div>
-                                <div class="animation-rotate-text-two">
-                                    <div class="nav-menu-text absolute">Gráficas</div>
-                                </div>
-                            </div>
-                        </a>
-                        <a data-w-id="83e8ae10-eea4-87ee-1c05-dc1b8dfcf55e" href="{{ url_for('informacion') }}" class="nav-menu-link w-inline-block">
-                            <div class="animation-rotate-text-container">
-                                <div class="animation-rotate-text-one">
-                                    <div class="nav-menu-text">Información</div>
-                                </div>
-                                <div class="animation-rotate-text-two">
-                                    <div class="nav-menu-text absolute">Información</div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div data-w-id="83e8ae10-eea4-87ee-1c05-dc1b8dfcf564" class="nav-menu-mobile">
-                        <img src="/static/img/_mobile-menu.svg" loading="lazy" alt=""/>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>PPP - Oficial</title>
+    <link rel="stylesheet" href="/static/font-awesome-4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/hero-slider-style.css">
+    <link rel="stylesheet" href="/static/css/magnific-popup.css">
+    <link rel="stylesheet" href="/static/css/templatemo-style.css">
+
+
+
+</head>
+
+<body>
+
+    <!-- Content -->
+    <div class="cd-hero">
+
+        <!-- Navigation -->
+        <div class="cd-slider-nav">
+            <nav class="navbar">
+                <div class="tm-navbar-bg">
+
+                    <a class="navbar-brand text-uppercase" href="#"><i class="fa fa-flash tm-brand-icon"></i>PPN</a>
+
+                    <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse"
+                        data-target="#tmNavbar">
+                        &#9776;
+                    </button>
+                    <div class="collapse navbar-toggleable-md text-xs-center text-uppercase tm-navbar" id="tmNavbar">
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/">Inico<span
+                                        class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('prediccion') }}">Predecir</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('graficas') }}" >Graficas</a>
+                            </li>
+                            <li class="nav-item active selected">
+                                <a class="nav-link" href="{{ url_for('informacion') }}">Información</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-        </nav>
-        <div class="mobile-menu">
-            <div class="mobile-menu-background-two"></div>
-            <div class="mobile-menu-container">
-                <div data-w-id="1b51882d-64fe-7679-556e-9a64ba7da636" class="mobile-menu-close-button">
-                    <img src="/static/img/_close-icon.svg" loading="lazy" alt=""/>
-                </div>
-                <div class="mobile-menu-links-container">
-                    <div class="overflow-hidden">
-                        <a href="/" class="mobile-menu-link">Inicio</a>
-                    </div>
-                    <div class="overflow-hidden">
-                        <a href="{{ url_for('prediccion') }}" class="mobile-menu-link">Predecir</a>
-                    </div>
-                    <div class="overflow-hidden">
-                        <a href="{{ url_for('graficas') }}" class="mobile-menu-link">Gráficas</a>
-                    </div>
-                    <div class="overflow-hidden">
-                        <a href="{{ url_for('informacion') }}" class="mobile-menu-link">Información</a>
-                    </div>
-                </div>
-                <div class="mobile-menu-line-container">
-                    <div class="mobile-menu-line"></div>
-                </div>
-            </div>
+
+            </nav>
         </div>
-        <div data-w-id="b07d750c-ef10-4988-cdcd-ff3cbf23712c" class="section no-top-padding">
-            <div style="-webkit-transform:translate3d(-100%, null, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(-100%, null, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(-100%, null, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(-100%, null, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="blog-post-header-background"></div>
-            <div class="container w-container">
-                <div class="spacer-32px"></div>
-                <div class="blog-post-header-container">
-                    <div id="w-node-fa1f4b31-c4da-83a3-0a45-bfd9b387ad9f-76128c28" class="blog-post-image-container">
-                        <div data-w-id="a7862c11-a1c2-805f-4246-1887d9086b3c" class="corners-image">
-                            <div class="image-with-corners-container">
-                                <img loading="lazy" id="w-node-a7862c11-a1c2-805f-4246-1887d9086b3e-76128c28" alt="A day trip to Chittorgarh from Udaipur" src="https://uploads-ssl.webflow.com/6354f829d619343ced128c31/635687a476397c9d8eeec5f7_blog-1.jpg" sizes="(max-width: 479px) 87vw, (max-width: 991px) 85vw, 40vw" srcset="https://uploads-ssl.webflow.com/6354f829d619343ced128c31/635687a476397c9d8eeec5f7_blog-1-p-500.jpg 500w, https://uploads-ssl.webflow.com/6354f829d619343ced128c31/635687a476397c9d8eeec5f7_blog-1-p-800.jpg 800w, https://uploads-ssl.webflow.com/6354f829d619343ced128c31/635687a476397c9d8eeec5f7_blog-1.jpg 1500w" class="image-with-corners"/>
-                                <div style="display:block" class="image-with-corners-overlay-gray-50-copy"></div>
-                                <div style="display:block" class="image-with-corners-overlay-gray"></div>
-                            </div>
-                            <img src="/static/img/_image-corner.svg" loading="lazy" width="45" style="-webkit-transform:translate3d(10px, 10px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(10px, 10px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(10px, 10px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(10px, 10px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" alt="" class="image-corner-top"/>
-                            <img src="/static/img/_corner-bottom.svg" loading="lazy" width="45" style="-webkit-transform:translate3d(-10px, -10px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(-10px, -10px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(-10px, -10px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(-10px, -10px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" alt="" class="image-corner-bottom"/>
-                        </div>
-                    </div>
-                    <div id="w-node-_66c10fa2-10a5-94a2-ae16-7bdfc5782c80-76128c28" class="grid-column _8px-vertical-space margin-top-14px-on-desktop">
-                        <div data-w-id="bf88a71a-4715-ca5b-3a90-0cba3e96ce8d" class="heading-animation-trigger">
-                            <div style="-webkit-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="animation-content">
-                                <h1 class="heading-h2 semibold margin-bottom-10px">Interpretación de los datos recolectados</h1>
-                            </div>
-                        </div>
-                        <div data-w-id="4342a019-92fd-e1dd-e969-c2a896f758c6" class="heading-animation-trigger">
-                            <div style="-webkit-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="animation-content">
-                                <p>15 min de Lectura</p>
+
+        <ul class="cd-hero-slider">
+            <!-- Page 5 About -->
+            <li class="selected">
+                <div class="cd-full-width">
+                    <div class="container-fluid js-tm-page-content tm-page-width" data-page-no="1">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="tm-flex">
+                                    <div
+                                        class="tm-bg-white-translucent text-xs-left tm-textbox tm-textbox-padding tm-white-box-margin-b">
+                                        <h2 class="tm-text-title">Interpretación de los datos recolectados</h2>
+                                        <p class="tm-text">En nuestra página, recopilamos datos de precipitación de 1971
+                                            a 2000 proporcionados por la IDEAM. Realizamos un breve análisis de estos
+                                            datos para identificar patrones climáticos a lo largo de estas tres décadas.
+                                            Esta información es crucial para comprender mejor las tendencias climáticas.
+                                        </p>
+                                    </div>
+                                    <div
+                                        class="tm-bg-white-translucent text-xs-left tm-textbox tm-textbox-padding tm-white-box-margin-b">
+                                        <img src="/static/images/tm-img-12.jpg" alt="">
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <p data-w-id="b0f37eb6-e738-1bd7-d085-7ff984bcfe15" style="-webkit-transform:translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0">En nuestra página, recopilamos datos de precipitación de 1971 a 2000 proporcionados por la IDEAM. Realizamos un breve análisis de estos datos para identificar patrones climáticos a lo largo de estas tres décadas. Esta información es crucial para comprender mejor las tendencias climáticas.</p>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="tm-flex">
+                                    <div
+                                        class="tm-bg-white-translucent text-xs-left tm-textbox tm-textbox-padding tm-white-box-margin-b">
+                                        <h2 class="tm-text-title">Patrones de Precipitación y Fenómenos Climáticos en
+                                            Colombia</h2>
+                                        <p class="tm-text">Colombia se destaca como uno de los países con mayores
+                                            índices de precipitación en el mundo, siendo el departamento de Chocó uno de
+                                            los lugares más destacados en este sentido. Además de Chocó, otros
+                                            departamentos en la región andina y del Caribe también experimentan niveles
+                                            significativos de lluvia.</p>
+                                        <p class="tm-text">En la región ecuatorial del Pacífico tropical, se presentan
+                                            dos fenómenos climatológicos conocidos como El Niño y La Niña. Estos
+                                            fenómenos tienen un papel crucial en la diversidad climática del Pacífico,
+                                            impactando las condiciones atmosféricas y generando cambios significativos
+                                            en el clima de la región.</p>
+                                        <p class="tm-text">El fenómeno del Niño es un evento en el cual las aguas del
+                                            océano Pacífico se calientan, lo que provoca cambios significativos en
+                                            algunas regiones cercanas. Por otro lado, el fenómeno de La Niña se
+                                            caracteriza por un aumento en la cantidad de precipitaciones y una
+                                            disminución en la temperatura.</p>
+                                        <img src="/static/images/graficas/Choco_2023-11-14-16-24-21.png" alt="">
+                                        <p class="tm-text"></p>
+                                        <p class="tm-text">El gráfico anterior muestra los datos de precipitación para
+                                            el departamento del Chocó, el cual registra la mayor cantidad de
+                                            precipitación. En el año 2000, este departamento alcanzó un promedio anual
+                                            de 6444 mm y, mensualmente, un promedio de 537 mm. Sin embargo, para el
+                                            siguiente año, esta cifra disminuyó a 6213 mm, con un promedio mensual de
+                                            517 mm.</p>
+                                        <p class="tm-text">Los datos recopilados por el IDEAM desde 1971 hasta 2000
+                                            revelan una tendencia a la baja en las cifras de precipitación. Esto se
+                                            atribuye al uso de una ecuación polinómica de alto grado, lo que hace que la
+                                            predicción sea más sensible a las variaciones en los datos.</p>
+                                    </div>
+                                    <div
+                                        class="tm-bg-white-translucent text-xs-left tm-textbox tm-textbox-padding tm-white-box-margin-b">
+                                        <p class="tm-text">Esta sensibilidad puede explicar la disminución pronosticada
+                                            y sugiere que pequeños cambios en los datos pueden afectar considerablemente
+                                            la predicción.</p>
+                                        <img src="/static/images/graficas/Mayor_mes.png" alt="">
+                                        <p></p>
+                                        <p class="tm-text">El gráfico anterior destaca los registros más elevados de
+                                            precipitación en el país, resaltando dos cifras significativas
+                                            correspondientes a los meses de diciembre y septiembre. El municipio con la
+                                            mayor precipitación se localiza en el departamento del Cauca,
+                                            específicamente en el municipio de López, en el área conocida como Concha
+                                            La.En el mes de diciembre, se registró la más alta precipitación, alcanzando
+                                            los 2223 mm. De manera similar, en septiembre, se observó una precipitación
+                                            de 2048 mm. Ambas cifras representan los niveles más altos registrados en
+                                            esta región.</p>
+                                        <p class="tm-text">Los altos niveles de precipitación presentan una serie de
+                                            desafíos, siendo las inundaciones el problema más significativo. Este
+                                            fenómeno conlleva a la pérdida de bienes y hogares, afectando a numerosas
+                                            familias y comunidades. Además de las pérdidas materiales, las inundaciones
+                                            pueden tener un impacto devastador en la infraestructura local, la
+                                            agricultura y la salud pública, desencadenando situaciones de emergencia que
+                                            requieren respuestas inmediatas y estratégicas por parte de las autoridades.
+                                        </p>
+                                        <p class="tm-text">Las proyecciones para el próximo mes en el departamento del
+                                            Cauca estiman un mínimo de 274 mm de precipitación. Esta expectativa se
+                                            fundamenta en el hecho de que solo dos municipios superan la media
+                                            establecida, que se sitúa en 167 mm. Estos municipios, Concha La y Puerto
+                                            López, destacan por tener los registros más altos de lluvia anual en la
+                                            región, aunque esto no necesariamente indica que el departamento sea el
+                                            líder absoluto en precipitaciones a nivel nacional. Más bien resalta la
+                                            particularidad de albergar los dos municipios con los mayores registros
+                                            pluviométricos anuales.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="tm-flex">
+                                    <div
+                                        class="tm-bg-white-translucent text-xs-left tm-textbox tm-textbox-padding tm-white-box-margin-b">
+                                        <h2 class="tm-text-title">Pronóstico de lluvias por departamento: Impacto
+                                            regional y desafíos climáticos</h2>
+                                        <img src="/static/images/graficas/Vichada_2023_lluvia.png" alt="">
+                                        <p class="tm-text"></p>
+                                        <p class="tm-text">De acuerdo con las proyecciones sobre la cantidad de días de
+                                            lluvia por departamento para el próximo mes, se anticipa que Vichada
+                                            liderará con 23 días de lluvia. Le siguen San Andrés y Providencia, así como
+                                            Caldas, ambos con 22 días de pronóstico lluvioso. Por su parte, Guaviare y
+                                            Boyacá se prevé que registren 21 días de lluvia.Estos pronósticos pueden
+                                            indicar patrones climáticos regionales destacados. Vichada, por ejemplo,
+                                            podría experimentar un período particularmente húmedo en el próximo mes, lo
+                                            cual podría influir en diversos aspectos, desde la agricultura hasta la
+                                            gestión de recursos hídricos en la región.</p>
+                                        <p class="tm-text">Por otro lado, tanto San Andrés y Providencia como Caldas
+                                            muestran pronósticos similares de precipitaciones. Estas condiciones
+                                            climáticas pueden plantear desafíos, especialmente en el contexto del
+                                            turismo, particularmente para San Andrés y Providencia.</p>
+                                    </div>
+                                    <div
+                                        class="tm-bg-white-translucent text-xs-left tm-textbox tm-textbox-padding tm-white-box-margin-b">
+                                        <p class="tm-text">Siendo islas, estas regiones podrían enfrentar complicaciones
+                                            debido al aumento del nivel del mar y la posible influencia de vientos
+                                            huracanados provenientes del Océano Atlántico. Estos fenómenos pueden
+                                            dificultar el acceso a las islas, lo que a su vez podría impactar
+                                            significativamente la economía local al reducir el flujo de turistas que
+                                            usualmente visitan estas áreas.</p>
+                                        <img src="/static/images/graficas/Grafica_lluvia.png" alt="">
+                                        <p></p>
+                                        <p class="tm-text">En la gráfica anterior se presentan los departamentos con la
+                                            mayor cantidad de días de lluvia durante el período de 1971 al 2000. El
+                                            departamento que registró la mayor cantidad de días de lluvia anual fue
+                                            Putumayo, con un total de 228 días. Le sigue Chocó con 217 días, Amazonas
+                                            con 209 días, Caquetá con 201 días y Risaralda con 197 días.Por otro lado,
+                                            entre los departamentos con la menor cantidad de días de lluvia se
+                                            encuentran La Guajira con 42 días, Atlántico con 66 días, Magdalena con 75
+                                            días, Sucre con 84 días y Cesar con 90 días. Estos datos reflejan las
+                                            variaciones climáticas regionales y la influencia de factores geográficos y
+                                            atmosféricos en cada área.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+
+                        </div>
                     </div>
-                </div>
+                </div> <!-- .cd-full-width -->
+
+            </li>
+        </ul> <!-- .cd-hero-slider -->
+
+        <footer class="tm-footer">
+
+            <div class="tm-social-icons-container text-xs-center">
+                <a href="#" class="tm-social-link"><i class="fa fa-facebook"></i></a>
+                <a href="#" class="tm-social-link"><i class="fa fa-twitter"></i></a>
+                <a href="#" class="tm-social-link"><i class="fa fa-instagram"></i></a>
+                <a href="#" class="tm-social-link"><i class="fa fa-linkedin"></i></a>
             </div>
-        </div>
-        <div class="section no-top-padding">
-            <div class="container-blog-post w-container">
-                <div data-w-id="f7aeaf9e-9b96-c155-3f5b-5764900ee197" style="-webkit-transform:translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 15px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="rich-text w-richtext">
-                    <h4>Patrones de Precipitación y Fenómenos Climáticos en Colombia</h4>
-                    <p>Colombia se destaca como uno de los países con mayores índices de precipitación en el mundo, siendo el departamento de Chocó uno de los lugares más destacados en este sentido. Además de Chocó, otros departamentos en la región andina y del Caribe también experimentan niveles significativos de lluvia.</p>
-                    <p>En la región ecuatorial del Pacífico tropical, se presentan dos fenómenos climatológicos conocidos como El Niño y La Niña. Estos fenómenos tienen un papel crucial en la diversidad climática del Pacífico, impactando las condiciones atmosféricas y generando cambios significativos en el clima de la región.</p>
-                    <p>El fenómeno del Niño es un evento en el cual las aguas del océano Pacífico se calientan, lo que provoca cambios significativos en algunas regiones cercanas. Por otro lado, el fenómeno de La Niña se caracteriza por un aumento en la cantidad de precipitaciones y una disminución en la temperatura.</p>
-                    <figure class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:1000pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
-                        <div>
-                            <img src="{{ url_for('static', filename='imagenes/Choco_2023-11-14-16-24-21.png') }}" loading="lazy" alt=""/>
-                        </div>
-                    </figure>
-                    <p>El gráfico anterior muestra los datos de precipitación para el departamento del Chocó, el cual registra la mayor cantidad de precipitación. En el año 2000, este departamento alcanzó un promedio anual de 6444 mm y, mensualmente, un promedio de 537 mm. Sin embargo, para el siguiente año, esta cifra disminuyó a 6213 mm, con un promedio mensual de 517 mm.</p>
-                    <p>Los datos recopilados por el IDEAM desde 1971 hasta 2000 revelan una tendencia a la baja en las cifras de precipitación. Esto se atribuye al uso de una ecuación polinómica de alto grado, lo que hace que la predicción sea más sensible a las variaciones en los datos. Esta sensibilidad puede explicar la disminución pronosticada y sugiere que pequeños cambios en los datos pueden afectar considerablemente la predicción.</p>
-                    <figure class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:1000pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
-                        <div>
-                            <img src="{{ url_for('static', filename='imagenes/Mayor_mes.png') }}" alt="meses_altos">
-                        </div>
-                    </figure>
-                    <p>El gráfico anterior destaca los registros más elevados de precipitación en el país, resaltando dos cifras significativas correspondientes a los meses de diciembre y septiembre. El municipio con la mayor precipitación se localiza en el departamento del Cauca, específicamente en el municipio de López, en el área conocida como Concha La.En el mes de diciembre, se registró la más alta precipitación, alcanzando los 2223 mm. De manera similar, en septiembre, se observó una precipitación de 2048 mm. Ambas cifras representan los niveles más altos registrados en esta región.</p>
-                    <p>Los altos niveles de precipitación presentan una serie de desafíos, siendo las inundaciones el problema más significativo. Este fenómeno conlleva a la pérdida de bienes y hogares, afectando a numerosas familias y comunidades. Además de las pérdidas materiales, las inundaciones pueden tener un impacto devastador en la infraestructura local, la agricultura y la salud pública, desencadenando situaciones de emergencia que requieren respuestas inmediatas y estratégicas por parte de las autoridades.</p>
-                    <p>Las proyecciones para el próximo mes en el departamento del Cauca estiman un mínimo de 274 mm de precipitación. Esta expectativa se fundamenta en el hecho de que solo dos municipios superan la media establecida, que se sitúa en 167 mm. Estos municipios, Concha La y Puerto López, destacan por tener los registros más altos de lluvia anual en la región, aunque esto no necesariamente indica que el departamento sea el líder absoluto en precipitaciones a nivel nacional. Más bien resalta la particularidad de albergar los dos municipios con los mayores registros pluviométricos anuales.</p>
-                    <br>
-                    <table class="lineas">
-                        <tr> <!-- Esto define una fila -->
-                            <th>Departamento</th> <!-- th se usa para encabezados -->
-                            <th>Promedio Anual</th>
-                        </tr>
-                        <tr> <!-- Otra fila -->
-                            <td>Choco</td> <!-- td se usa para celdas regulares -->
-                            <td>5498</td>
-                        </tr>
-                        <tr> <!-- Otra fila -->
-                            <td>Vaupes</td>
-                            <td>3843</td>
-                        </tr>
-                        <tr> <!-- Otra fila -->
-                            <td>Amazonas</td>
-                            <td>3727</td>
-                        </tr>
-                        <tr> <!-- Otra fila -->
-                            <td>Caqueta</td>
-                            <td>3481</td>
-                        </tr>
-                        <tr> <!-- Otra fila -->
-                            <td>Meta</td>
-                            <td>3308</td>
-                        </tr>
-                        <tr> <!-- Otra fila -->
-                            <td>Putumayo</td>
-                            <td>3054</td>
-                        </tr>
-                        <tr> <!-- Otra fila -->
-                            <td>Guainia</td>
-                            <td>2874</td>
-                        </tr>
-                        <tr> <!-- Otra fila -->
-                            <td>Guaviare</td>
-                            <td>2819</td>
-                        </tr>
-                        <tr> <!-- Otra fila -->
-                            <td>Antioquia</td>
-                            <td>2790</td>
-                        </tr>
-                        <tr> <!-- Otra fila -->
-                            <td>Vichada</td>
-                            <td>2730</td>
-                        </tr>
-                        <tr> <!-- Otra fila -->
-                            <td>Caldas</td>
-                            <td>2724</td>
-                        </tr>
-                        <tr> <!-- Otra fila -->
-                            <td>Casanare</td>
-                            <td>2709</td>
-                        </tr>
-                        <tr> <!-- Otra fila -->
-                            <td>Cauca</td>
-                            <td>2488</td>
-                        </tr>
-                        <tr> <!-- Otra fila -->
-                            <td>Risaralda</td>
-                            <td>2467</td>
-                        </tr>
-                        <tr> <!-- Otra fila -->
-                            <td>Arauca</td>
-                            <td>2404</td>
-                        </tr>
-                        <tr> <!-- Otra fila -->
-                            <td>Quindio</td>
-                            <td>2321</td>
-                        </tr>
-                        <tr> <!-- Otra fila -->
-                            <td>Nariño</td>
-                            <td>2191</td>
-                        </tr>
-                        <tr> <!-- Otra fila -->
-                            <td>Santander</td>
-                            <td>2110</td>
-                        </tr>
-                        <tr> <!-- Otra fila -->
-                            <td>Norte de santander</td>
-                            <td>1970</td>
-                        </tr>
-                        <tr> <!-- Otra fila -->
-                            <td>Bolivar</td>
-                            <td>1966</td>
-                        </tr>
-                        <tr> <!-- Otra fila -->
-                            <td>Tolima</td>
-                            <td>1816</td>
-                        </tr>
-                        <tr> <!-- Otra fila -->
-                            <td>Valle</td>
-                            <td>1788</td>
-                        </tr>
-                        <tr> <!-- Otra fila -->
-                            <td>San Andres y Pr</td>
-                            <td>1769</td>
-                        </tr>
-                        <tr> <!-- Otra fila -->
-                            <td>Sucre</td>
-                            <td>1699</td>
-                        </tr>
-                        <tr> <!-- Otra fila -->
-                            <td>Cesar</td>
-                            <td>1633</td>
-                        </tr>
-                        <tr> <!-- Otra fila -->
-                            <td>Cordoba</td>
-                            <td>1570</td>
-                        </tr>
-                        <tr> <!-- Otra fila -->
-                            <td>Boyaca</td>
-                            <td>1568</td>
-                        </tr>
-                        <tr> <!-- Otra fila -->
-                            <td>Huila</td>
-                            <td>1525</td>
-                        </tr>
-                        <tr> <!-- Otra fila -->
-                            <td>Cundinamarca</td>
-                            <td>1422</td>
-                        </tr>
-                        <tr> <!-- Otra fila -->
-                            <td>Magdalena</td>
-                            <td>1411</td>
-                        </tr>
-                        <tr> <!-- Otra fila -->
-                            <td>Atlantico</td>
-                            <td>987</td>
-                        </tr>
-                        <tr> <!-- Otra fila -->
-                            <td>Bogota D.C.</td>
-                            <td>972</td>
-                        </tr>
-                        <tr> <!-- Otra fila -->
-                            <td>La Guajira</td>
-                            <td>666</td>
-                        </tr>
-                    </table>
-                    <br>
-                    <p>Esta tabla muestra los promedios anuales de precipitación en los diferentes departamentos. Los departamentos con los niveles más altos de precipitación son Chocó, Vaupés, Amazonas, Caquetá y Meta. Estas altas precipitaciones se concentran principalmente en dos regiones: la Amazonia y la región Pacífica.Observando los datos previamente mencionados, se destaca que las áreas cercanas a la selva amazónica, como Amazonas y Vaupés, presentan los niveles más altos de precipitación. Esta región, conocida por su biodiversidad, suele experimentar condiciones climáticas con altos niveles de lluvia, lo mismo pasa en la región pacífica que al estar cerca al oceano pacifico presenta las mas altas precipitaciones.</p>
-                    <p>Además, las regiones con menores índices de precipitación se encuentran en la región del Caribe y la Orinoquía. Estos departamentos muestran niveles más bajos de lluvia anual, lo que puede influir significativamente en las características del clima, la agricultura y el ecosistema de esas áreas. Los departamentos cercanos al océano Atlántico, como La Guajira, experimentan temporadas de bajas precipitaciones. Este departamento se ve especialmente afectado debido a la influencia de vientos secos o con poca humedad provenientes del océano Atlántico. Estos vientos no favorecen la formación de una cantidad considerable de nubes, lo que repercute en una menor cantidad de lluvia. Además, la topografía del terreno también influye; las montañas actúan como barreras que bloquean las masas de aire cargadas de humedad provenientes del océano, reduciendo aún más las precipitaciones en esta región.</p>
-                    <h4>Pronóstico de lluvias por departamento: Impacto regional y desafíos climáticos</h4>
-                    <figure class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:1000pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
-                        <div>
-                            <img src="{{ url_for('static', filename='imagenes/Vichada_2023_lluvia.png') }}" alt="meses_altos">
-                        </div>
-                    </figure>
-                    <p>De acuerdo con las proyecciones sobre la cantidad de días de lluvia por departamento para el próximo mes, se anticipa que Vichada liderará con 23 días de lluvia. Le siguen San Andrés y Providencia, así como Caldas, ambos con 22 días de pronóstico lluvioso. Por su parte, Guaviare y Boyacá se prevé que registren 21 días de lluvia.Estos pronósticos pueden indicar patrones climáticos regionales destacados. Vichada, por ejemplo, podría experimentar un período particularmente húmedo en el próximo mes, lo cual podría influir en diversos aspectos, desde la agricultura hasta la gestión de recursos hídricos en la región.</p>
-                    <p>Por otro lado, tanto San Andrés y Providencia como Caldas muestran pronósticos similares de precipitaciones. Estas condiciones climáticas pueden plantear desafíos, especialmente en el contexto del turismo, particularmente para San Andrés y Providencia.Siendo islas, estas regiones podrían enfrentar complicaciones debido al aumento del nivel del mar y la posible influencia de vientos huracanados provenientes del Océano Atlántico. Estos fenómenos pueden dificultar el acceso a las islas, lo que a su vez podría impactar significativamente la economía local al reducir el flujo de turistas que usualmente visitan estas áreas.</p>
-                    <figure class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:1000pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
-                        <div>
-                            <img src="{{ url_for('static', filename='imagenes/Grafica_lluvia.png') }}" alt="meses_altos">
-                        </div>
-                    </figure>
-                    <p>En la gráfica anterior se presentan los departamentos con la mayor cantidad de días de lluvia durante el período de 1971 al 2000. El departamento que registró la mayor cantidad de días de lluvia anual fue Putumayo, con un total de 228 días. Le sigue Chocó con 217 días, Amazonas con 209 días, Caquetá con 201 días y Risaralda con 197 días.Por otro lado, entre los departamentos con la menor cantidad de días de lluvia se encuentran La Guajira con 42 días, Atlántico con 66 días, Magdalena con 75 días, Sucre con 84 días y Cesar con 90 días. Estos datos reflejan las variaciones climáticas regionales y la influencia de factores geográficos y atmosféricos en cada área.</p>
-                </div>
-                <div class="animation-swipe-reveal-overlay"></div>
-            </div>
-        </div>
-        <footer class="footer">
-            <div class="container w-container">
-                <div class="w-layout-grid footer-main-grid">
-                    <div id="w-node-_9dff417f-86be-9d18-e0a0-4a98d29d9ead-97995707" class="footer-logo-container">
-                    </div>
-                    <div id="w-node-_9dff417f-86be-9d18-e0a0-4a98d29d9ead-97995707" class="footer-logo-container">
-                    </div>
-                    <div id="w-node-_4e365414-d5d6-3d0b-b928-19c39799575f-97995707" class="footer-social-media-icons-list">
-                        <a href="#" class="social-media-icon-link w-inline-block">
-                            <img src="/static/img/_twitter.svg" loading="lazy" width="16" alt="twitter" class="twitter-icon"/>
-                        </a>
-                        <a href="#" class="social-media-icon-link w-inline-block">
-                            <img src="/static/img/_facebook.svg" loading="lazy" width="7" alt="facebook" class="facebook-icon"/>
-                        </a>
-                        <a href="#" class="social-media-icon-link w-inline-block">
-                            <img src="/static/img/_instagram.svg" loading="lazy" width="15" alt="instagram" class="instagram-icon"/>
-                        </a>
-                        <a href="#" class="social-media-icon-link w-inline-block">
-                            <img src="/static/img/_linkedin.svg" loading="lazy" width="15" alt="linkedin" class="linkedin-icon"/>
-                        </a>
-                    </div>
-                    <div id="w-node-a6ba56b1-38d1-ba41-c5f1-fa09e479356a-97995707" class="footer-line"></div>
-                    <div id="w-node-_1d0f04fc-8fed-1930-8a6d-07775b23f1a3-97995707" class="footer-menu-two">
-                        <div class="footer-nav-menu-links">
-                            <a data-w-id="5f26234f-46b0-ee04-8f1f-aa66b61f1a76" href="" class="nav-menu-link w-inline-block">
-                                <div class="animation-rotate-text-container">
-                                    <div class="animation-rotate-text-one">
-                                        <div class="nav-menu-text">Políticas</div>
-                                    </div>
-                                    <div class="animation-rotate-text-two">
-                                        <div class="nav-menu-text">Políticas</div>
-                                    </div>
-                                </div>
-                            </a>
-                            <a data-w-id="5f26234f-46b0-ee04-8f1f-aa66b61f1a7d" href="" class="nav-menu-link w-inline-block">
-                                <div class="animation-rotate-text-container">
-                                    <div class="animation-rotate-text-one">
-                                        <div class="nav-menu-text">Guia</div>
-                                    </div>
-                                    <div class="animation-rotate-text-two">
-                                        <div class="nav-menu-text">Guia</div>
-                                    </div>
-                                </div>
-                            </a>
-                            <a data-w-id="5f26234f-46b0-ee04-8f1f-aa66b61f1a83" href="" class="nav-menu-link last w-inline-block">
-                                <div class="animation-rotate-text-container">
-                                    <div class="animation-rotate-text-one">
-                                        <div class="nav-menu-text">Preguntas</div>
-                                    </div>
-                                    <div class="animation-rotate-text-two">
-                                        <div class="nav-menu-text">Preguntas</div>
-                                    </div>
-                                </div>
-                            </a>
-                            <a data-w-id="5f26234f-46b0-ee04-8f1f-aa66b61f1a89" href="" class="nav-menu-link w-inline-block">
-                                <div class="animation-rotate-text-container">
-                                    <div class="animation-rotate-text-one">
-                                        <div class="nav-menu-text">Registros</div>
-                                    </div>
-                                    <div class="animation-rotate-text-two">
-                                        <div class="nav-menu-text">Registros</div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-layout-grid footer-bottom-grid">
-                    <p class="text-md">
-                        Proyecto por <a href="" class="link">Juan C. Calderon & Monica Plata R.</a>
-                    </p>
-                    <p class="text-md text-align-right text-aling-left-on-mobile">
-                         <a href="" class="link">Negocios Inteligentes</a>
-                    </p>
-                </div>
-            </div>
+
+            <p class="tm-copyright-text">Proyecto por Juan C. Calderon & Monica Plata R.</p>
+
         </footer>
-        <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6354f829d619347cb5128c1c" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-        <script src="https://uploads-ssl.webflow.com/6354f829d619347cb5128c1c/js/webflow.2e0ec921c.js" type="text/javascript"></script>
-    </body>
+
+    </div> <!-- .cd-hero -->
+
+
+    <!-- Preloader, https://ihatetomatoes.net/create-custom-preloading-screen/ -->
+    <div id="loader-wrapper">
+
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+
+    </div>
+
+    <!-- load JS files -->
+    <script src="/static/js/jquery-1.11.3.min.js"></script>
+    <script src="/static/https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/jquery.magnific-popup.min.js"></script>
+
+    <script>
+
+        function adjustHeightOfPage(pageNo) {
+
+            var offset = 80;
+            var pageContentHeight = 0;
+
+            var pageType = $('div[data-page-no="' + pageNo + '"]').data("page-type");
+
+            if (pageType != undefined && pageType == "gallery") {
+                pageContentHeight = $(".cd-hero-slider li:nth-of-type(" + pageNo + ") .tm-img-gallery-container").height();
+            }
+            else {
+                pageContentHeight = $(".cd-hero-slider li:nth-of-type(" + pageNo + ") .js-tm-page-content").height();
+            }
+
+            if ($(window).width() >= 992) { offset = 120; }
+            else if ($(window).width() < 480) { offset = 40; }
+
+            // Get the page height
+            var totalPageHeight = 15 + $('.cd-slider-nav').height()
+                + pageContentHeight + offset
+                + $('.tm-footer').height();
+
+            // Adjust layout based on page height and window height
+            if (totalPageHeight > $(window).height()) {
+                $('.cd-hero-slider').addClass('small-screen');
+                $('.cd-hero-slider li:nth-of-type(' + pageNo + ')').css("min-height", totalPageHeight + "px");
+            }
+            else {
+                $('.cd-hero-slider').removeClass('small-screen');
+                $('.cd-hero-slider li:nth-of-type(' + pageNo + ')').css("min-height", "100%");
+            }
+        }
+
+        /*
+            Everything is loaded including images.
+        */
+        $(window).load(function () {
+
+            adjustHeightOfPage(1); // Adjust page height
+
+            /* Gallery One pop up
+            -----------------------------------------*/
+            $('.gallery-one').magnificPopup({
+                delegate: 'a', // child items selector, by clicking on it popup will open
+                type: 'image',
+                gallery: { enabled: true }
+            });
+
+            /* Gallery Two pop up
+            -----------------------------------------*/
+            $('.gallery-two').magnificPopup({
+                delegate: 'a',
+                type: 'image',
+                gallery: { enabled: true }
+            });
+
+            /* Gallery Three pop up
+            -----------------------------------------*/
+            $('.gallery-three').magnificPopup({
+                delegate: 'a',
+                type: 'image',
+                gallery: { enabled: true }
+            });
+
+            /* Collapse menu after click 
+            -----------------------------------------*/
+            $('#tmNavbar a').click(function () {
+                $('#tmNavbar').collapse('hide');
+
+                adjustHeightOfPage($(this).data("no")); // Adjust page height       
+            });
+
+            /* Browser resized 
+            -----------------------------------------*/
+            $(window).resize(function () {
+                var currentPageNo = $(".cd-hero-slider li.selected .js-tm-page-content").data("page-no");
+
+                // wait 3 seconds
+                setTimeout(function () {
+                    adjustHeightOfPage(currentPageNo);
+                }, 1000);
+
+            });
+
+            // Remove preloader (https://ihatetomatoes.net/create-custom-preloading-screen/)
+            $('body').addClass('loaded');
+
+        });
+
+        // Restaurar la posición de desplazamiento después de cargar la página
+        window.addEventListener("load", function() {
+            // Obtener la posición de desplazamiento de localStorage
+            const scrollPosition = localStorage.getItem("scrollPosition");
+
+            // Si hay una posición de desplazamiento guardada, desplázate a esa posición
+            if (scrollPosition) {
+                window.scrollTo(0, parseInt(scrollPosition, 10));
+            }
+        });
+
+    </script>
+
+</body>
+
 </html>

@@ -13,10 +13,10 @@ function ejecuta() {
     document.getElementById("Segundo").style.display = "none";
 
 
-    this.classList.add('w--current');
+    this.setAttribute('aria-selected', 'true');
       // Remover la clase 'w--current' del otro botón si está presente
       let boton_2 = document.getElementById("w-tabs-0-data-w-tab-1");
-      boton_2.classList.remove('w--current');
+      boton_2.removeAttribute('aria-selected');
     
     
     }
@@ -27,10 +27,10 @@ function ejecuta() {
     document.getElementById("Primero").style.display = "none";
 
 
-    this.classList.add('w--current');
+    this.setAttribute('aria-selected', 'true');
       // Remover la clase 'w--current' del otro botón si está presente
       let boton_1 = document.getElementById("w-tabs-0-data-w-tab-0");
-      boton_1.classList.remove('w--current');
+      boton_1.removeAttribute('aria-selected');
     }
     
     
