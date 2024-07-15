@@ -6,17 +6,13 @@ Este proyecto utiliza Python y Flask para analizar datos climáticos de precipit
 
 El objetivo de este proyecto es analizar y visualizar datos históricos de precipitación y lluvia utilizando diversas técnicas estadísticas y gráficas.
 
-## Funcionalidades
-
-- **Estadísticas Básicas:**
+## Estadísticas Básicas
   - Media
   - Mediana
   - Desviación estándar
   - Moda
     
-## Tecnologías Utilizadas
-
-- **Python Libraries:**
+## Librerias de Python
   - Flask
   - Pandas
   - NumPy
@@ -25,5 +21,14 @@ El objetivo de este proyecto es analizar y visualizar datos históricos de preci
 ## Instalación y Uso
 
 1. Clona este repositorio.
+ ```
+git clone https://github.com/Dark-ss/prediccion-lluvia.git
+```  
 2. Instala las dependencias.
+```
+pip install [Dependencias]
+```
 3. Ejecuta la aplicación.
+```
+python precipi.py
+```
