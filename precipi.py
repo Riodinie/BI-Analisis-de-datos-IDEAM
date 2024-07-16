@@ -14,7 +14,7 @@ import base64#codifica las imagenes en cadenas de 64(ASCII)
 import math
 import os #para el guardado de las imagenes
 
-app = Flask("prediccion")
+app = Flask(__name__)
 
 @app.route("/")
 def formulario_precipi():
