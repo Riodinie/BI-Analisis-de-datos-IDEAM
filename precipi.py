@@ -82,8 +82,7 @@ def prediccion_precipitacion():
     img2.seek(0)
     imagen_grafica = base64.b64encode(img2.read()).decode()
 
-    img2_path = os.path.join("graficas", "grafico2.png")
-    plt.savefig(img2_path, format='png')
+ 
 
     modeloregre = np.polyfit(meses, promediordenado, 3)
     predecir = np.poly1d(modeloregre)
@@ -118,9 +117,6 @@ def prediccion_precipitacion():
     img1.seek(0)#para leer el archivo
     imagen_prediccion = base64.b64encode(img1.read()).decode()#la convierte a una cadena base64
     
-    graficas_guardada = f"{departamento_seleccionado}_{datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')}.png" #guarda la grafica en formato png con el nombre del departamento y la fecha
-    img1_path = os.path.join("graficas", graficas_guardada)
-    plt.savefig(img1_path, format='png')
 
 
     data2 = pd.read_excel('diaslluvia.xlsx', sheet_name='Precipitación')
