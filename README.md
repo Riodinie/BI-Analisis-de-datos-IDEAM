@@ -22,7 +22,7 @@ El objetivo de este proyecto es analizar y visualizar datos históricos de preci
 
 1. Clona este repositorio.
  ```
-git clone https://github.com/Dark-ss/prediccion-lluvia.git
+git clone https://github.com/Riodinie/BI-Analisis-de-datos-IDEAM.git
 ```  
 2. Instala las dependencias.
 ```
